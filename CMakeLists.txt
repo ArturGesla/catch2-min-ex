@@ -26,8 +26,11 @@ project(rotst VERSION 1.0)
 # target_include_directories(tests PUBLIC "/people/gesla/Documents/git/Catch2/build/lib")
 
 # set(Catch2_DIR "/people/gesla/Documents/git/Catch2/build")
-set(CMAKE_PREFIX_PATH "/people/gesla/Documents/git/Catch2/build/")
-set(CMAKE_FIND_DEBUG_MODE TRUE)
-find_package(Catch2 REQUIRED CONFIG PATHS "/people/gesla/Documents/git/Catch2/build/lib/cmake/Catch2/" ) # like find lib but searches for additional headers using Config.cmake files
+#set(CMAKE_PREFIX_PATH "/people/gesla/Documents/git/Catch2/build/")
+#set(CMAKE_FIND_DEBUG_MODE TRUE)
+#find_package(Catch2 REQUIRED CONFIG PATHS "/people/gesla/Documents/git/Catch2/build/lib/cmake/Catch2/" ) # like find lib but searches for additional headers using Config.cmake files
+find_package(Catch2 REQUIRED CONFIG ) # like find lib but searches for additional headers using Config.cmake files
 add_executable(tests test.cpp)
 target_link_libraries(tests PRIVATE Catch2::Catch2WithMain)
+# target_include_directories(tests PUBLIC "/people/gesla/Documents/git/Catch2/build/include/")
+ target_include_directories(tests PUBLIC "/usr/local/include/catch2")
